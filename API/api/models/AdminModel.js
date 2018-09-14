@@ -18,7 +18,7 @@ var AdminSchema = new Schema({
   password: {
     type: String,
     required: 'Kindly enter the passwors of the Admin'
-  },
+  }
 });
 
 

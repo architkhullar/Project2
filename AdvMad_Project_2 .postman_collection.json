@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "3ae0f53c-6d12-474d-864d-75c43f812cf9",
+		"name": "AdvMad_Project_2 ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/submit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "PatientID",
+							"value": "user@test.com",
+							"type": "text"
+						},
+						{
+							"key": "q1",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "q2",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "q3",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "q4",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "q5",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "q6",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "q7",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "q8",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "q9",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "q10",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"submit"
+					]
+				},
+				"description": "POST request for submitting a survey\nthis request auto adds the scores from the scores of all the questions submitted and returns the score with a message and status"
+			},
+			"response": []
+		},
+		{
+			"name": "create a new admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Sunidhi Kabra",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "skabra@uncc.edu",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/create_admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"create_admin"
+					]
+				},
+				"description": "This API takes ibn the following deatils:\nname\nemail\nusername\npassword\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Login request for the admin portal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin_login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin_login"
+					]
+				},
+				"description": "This POST request takes in the username and password of the intended admin to be logged in and returns the name of the admin logged in with the status and auccessful logged in message"
+			},
+			"response": []
+		}
+	]
+}

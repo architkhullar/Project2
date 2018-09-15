@@ -16,4 +16,7 @@ module.exports = function(app) {
   app.route('/register_patient')
       .post(PatientHandlers.register_patient);
 
+  app.route('/patient_login')
+      .post(PatientHandlers.patient_login);
+
 };

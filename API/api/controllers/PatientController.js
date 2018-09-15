@@ -4,17 +4,17 @@ var mongoose = require('mongoose'),
   patient = mongoose.model('Patient');
 
   exports.register_patient = function(req, res) {
-  var newPatient = new Patient(req.body);
-  newPatient.findOne({
+  Patient.findOne({
     username: req.body.username
   }, function(err, patient) {
     if (err) throw err;
     if (!patient){
+      var newPatient = new Patient(req.body);
       newPatient.save(function(err, patient) {
         if (err) {
           return res.status(400).send({message: err, status:'400'});
         } else {
-          return res.json({username: patient.username , message: 'Patient Created', status:'200'});
+          return res.json({username: newPatient.username , message: 'Patient Created', status:'200'});
         }
       });
     } else {

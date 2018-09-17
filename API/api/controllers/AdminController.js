@@ -27,8 +27,9 @@ var mongoose = require('mongoose'),
       if (!admin) {
       res.status(401).json({ message: 'Authentication failed. Admin not found.', status: '401' });
     } else if (admin) {
+      console.log("done");
       return res.json({name: admin.name, message: 'Authentication successful, Admin logged in', status: '200' });
-      //return res.json(admin);
+
     }
   });
 };

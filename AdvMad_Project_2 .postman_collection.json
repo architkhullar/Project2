@@ -232,7 +232,7 @@
 						},
 						{
 							"key": "username",
-							"value": "abc@xyz.com",
+							"value": "qweer@xyz.com",
 							"description": "should be unique",
 							"type": "text"
 						},
@@ -308,6 +308,70 @@
 					]
 				},
 				"description": "This POST request taken in the uswername and password of the patient created by the admin and returns the username encoded with jwt"
+			},
+			"response": []
+		},
+		{
+			"name": "display all survey data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsImlhdCI6MTUzNzIyMzIxNX0.fyJIFO6tF8qrk9QZkWJRRLobibKF5obUPFXJYoIpaU4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://ec2-18-216-97-75.us-east-2.compute.amazonaws.com:3000/all_survey_data",
+					"protocol": "http",
+					"host": [
+						"ec2-18-216-97-75",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "3000",
+					"path": [
+						"all_survey_data"
+					]
+				},
+				"description": "This request takes in the token of the admin requesting all the survey data, verifies it against the admin collection and sends all the data in the Survey collection (all the survey data)"
+			},
+			"response": []
+		},
+		{
+			"name": "display all patient data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsImlhdCI6MTUzNzIyMzIxNX0.fyJIFO6tF8qrk9QZkWJRRLobibKF5obUPFXJYoIpaU4"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://ec2-18-216-97-75.us-east-2.compute.amazonaws.com:3000/all_patient_data",
+					"protocol": "http",
+					"host": [
+						"ec2-18-216-97-75",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "3000",
+					"path": [
+						"all_patient_data"
+					]
+				},
+				"description": "This request takes in the token of the admin requesting all the patient data, verifies it against the admin collection and sends all the data in the patient collection (all the patient data)"
 			},
 			"response": []
 		}

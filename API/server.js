@@ -10,6 +10,7 @@ var express = require('express'),
 
   mongoose.Promise = global.Promise;
   mongoose.connect('mongodb+srv://aMad:12019@cluster0-axmyu.mongodb.net/test?retryWrites=true');
+  var db = mongoose.connection;
 
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());

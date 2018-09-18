@@ -19,4 +19,10 @@ module.exports = function(app) {
   app.route('/patient_login')
       .post(PatientHandlers.patient_login);
 
+  app.route('/all_patient_data')
+      .post(PatientHandlers.all_patient_data);
+
+  app.route('/all_survey_data')
+      .post(SurveyHandlers.all_survey_data);
+
 };

@@ -37,3 +37,25 @@ exports.patient_login = function(req, res) {
     }
   });
 };
+
+exports.all_patient_data = function(req, res) {
+  var newUsername = jwt.decode(req.headers.authorization);
+  console.log(newUsername);
+  var string = JSON.stringify(newUsername);
+  var objectValue = JSON.parse(string);
+  var getuser = objectValue['username'];
+
+  Admin.findOne({
+    username: getuser
+  }, function(err, user){
+    if (err) throw err;
+    if (!admin) {
+      console.log('2');
+      res.status(401).json({ message: 'you do not have the admin priviliges', status: '401'});
+    } else if (user) {
+      mongoose.connection.collection("patients").find().toArray(function(err, data) {
+          res.send(data);
+        })
+      }
+    });
+      };

@@ -1,6 +1,7 @@
 'user strict';
 
 var mongoose = require('mongoose'),
+  jwt = require('jsonwebtoken'),
   admin = mongoose.model('Admin');
 
 
@@ -28,7 +29,7 @@ var mongoose = require('mongoose'),
       res.status(401).json({ message: 'Authentication failed. Admin not found.', status: '401' });
     } else if (admin) {
       console.log("done");
-      return res.json({name: admin.name, message: 'Authentication successful, Admin logged in', status: '200' });
+      return res.json({token: jwt.sign({ username: admin.username}, 'secretkey'), message: 'Authentication successful, Admin logged in', status: '200' });
 
     }
   });

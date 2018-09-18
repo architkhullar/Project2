@@ -3,6 +3,7 @@
 var mongoose = require('mongoose'),
   jwt = require('jsonwebtoken'),
   survey = mongoose.model('Survey');
+  admin = mongoose.model('Admin');
 
 exports.submit = function(req, res) {
   var newUsername = jwt.decode(req.headers.authorization);
@@ -25,4 +26,26 @@ exports.submit = function(req, res) {
 };
 
 
-//exports.display_all_patients =
+exports.all_survey_data = function(req, res) {
+  console.log('1');
+  var newUsername = jwt.decode(req.headers.authorization);
+  console.log(newUsername);
+  var string = JSON.stringify(newUsername);
+  var objectValue = JSON.parse(string);
+  var getuser = objectValue['username'];
+  console.log('1');
+
+  Admin.findOne({
+    username: getuser
+  }, function(err, user){
+    if (err) throw err;
+    if (!user) {
+      console.log('2');
+      res.status(401).json({ message: 'you do not have the admin priviliges', status: '401'});
+    } else if (user) {
+      mongoose.connection.collection("surveys").find().toArray(function(err, data) {
+          res.send(data);
+        })
+      }
+    });
+  };

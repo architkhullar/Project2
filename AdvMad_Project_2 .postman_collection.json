@@ -205,6 +205,10 @@
 					{
 						"key": "Content-Type",
 						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMSIsImlhdCI6MTUzNzIyOTU1N30.89GFZZ-ci4FNTXeiMwQXFw-sZNs31ljS8-NH8qViRQ0"
 					}
 				],
 				"body": {
@@ -232,7 +236,7 @@
 						},
 						{
 							"key": "username",
-							"value": "qweer@xyz.com",
+							"value": "asdasdsad@xsadsadyz.com",
 							"description": "should be unique",
 							"type": "text"
 						},
